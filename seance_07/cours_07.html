@@ -30,6 +30,8 @@ class: center, middle
 
 ## Des fonctions
 
+[Liste des fonctions de xpath 2.0](http://www.saxonica.com/html/documentation/functions/fn/)
+
 - `position()`: le numéro du noeud contexte
 - `count(arg)`: le nombre de noeuds passé en argument
 - `last()`: le nombre de noeuds du contexte
@@ -70,7 +72,88 @@ class: center, middle
 
 Xpath 2.0 introduit la notion de séquence à la place de `nodeset`
 
+Une expression Xpath retourne une séquence
+
 Une séquence est une suite ordonnée de noeuds et/ou de valeurs
+
+Une séquence ne peut pas en contenir une autre (elle sera aplatit)
+
+Les séquences vides sont supprimées
+
+- `('xml', 'xpath', 'xslt')`
+- `(21, 10, 2019)`
+- `('xml', 'xpath', 'xslt', 21, 10, 2019)`
+- `(//juicer/name)`
+- `()`: une séquence vide
+- `('')`: une séquence avec une chaîne vide
+
+---
+# XPATH - Séquences
+
+Il est possible de
+
+- d'extraire un objet : `('a', 'b', 'c')[2] -> 'b'`
+- d'obtenir la taille : `count(('a', 'b', 'c')) -> 3`
+- de faire la somme des objets la composant : `sum((1,2,3)) -> 6`
+- d'obtenir la moyenne avec `avg`
+- d'obtenir la plus petite valeur avec `min`
+- d'obtenir la plus grande valeur avec `max`
+
+Le noeud contexte est représenté par le point `.`
+- pour élimer les chaînes vides : `('a', '', 'b', '', 'c')[.] -> ('a', 'b', 'c')
+- appliquer une fonction ou une évaluation `(1,2,3,4,5)[. > 3] -> (4,5)
+- très utile en xslt !
+
+Créer une séquence d'entier `(x to y)`
+
+---
+# XPATH - Séquences
+
+Quelques fonctions
+
+- `index-of(seq, objet)`: trouver la position de `objet` dans `seq`
+- `remove(seq, position)`: supprimer l'objet à la `position`
+- `insert-before(seq, objet, position)`: ajoute `l'objet` avant la position indiquée
+- pour ajouter après, `insert-before(seq, objet, position > len de la seq)`
+- `reverse(seq)`: retourne la séquence
+
+---
+# XPATH - Séquences
+
+## Exercice sur le fichier `juicers.xml`
+
+Adaptation du powerpoint de Roger Costello
+
+1. Créer une séquence contenant les `juicer` de type centrifugeuse
+2. Sélectionner la dernière machine à partir de cette séquence
+3. Supprimer la deuxième machine de cette séquence
+4. Créer une séquence du nom des machines, la séquence doit contenir des chaînes de caractères
+5. Afficher la position de `Juiceman Jr.` à partir de cette séquence
+6. Créer une séquence avec les noeuds contenant le nom des machines
+7. Afficher la position du noeud contenant `Juiceman Jr.` à partir de cette séquence
+
+8. Créer une séquence d'entier allant de 5 à 25
+10 Afficher tous les multiples de 5 de cette séquence
+
+---
+# XPATH - Séquences
+
+## Opérateurs ensemblistes
+
+---
+# XPATH - Séquences
+
+## Comparaison
+---
+# XPATH - Séquences
+
+## Boucle **for**
+
+---
+# XPATH - Séquences
+
+## Contrôle de flux
+
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
