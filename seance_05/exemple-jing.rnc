@@ -1,3 +1,0 @@
-element book {
-    element page { text }+
-}
