@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE racine [
+<!ENTITY nano "Apple iPod Nano">
+<!ENTITY touch "Apple iPod Touch">
+<!ELEMENT racine (balladeur+)>
+<!ELEMENT balladeur (nom, stockage, prix)>
+<!ATTLIST balladeur 
+    id CDATA #REQUIRED
+    marque ( apple | sony ) #REQUIRED>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT stockage (#PCDATA)>
+<!ELEMENT prix (#PCDATA)>
+]>
+<racine>
+    <balladeur id="1" marque="apple">
+        <nom>&nano; 16 Go Space Gray 2.5</nom>
+        <stockage>16 Go</stockage>
+        <prix>180.49</prix>
+    </balladeur>
+    <balladeur id="2" marque="apple">
+        <nom>&touch; 32Go or</nom>
+        <stockage>32 Go</stockage>
+        <prix>275.49</prix>
+    </balladeur>
+    <balladeur id="3" marque="apple">
+        <nom>&nano; 16 Go Gold 2.5</nom>
+        <stockage>16 Go</stockage>
+        <prix>180.49</prix>
+    </balladeur>
+    <balladeur id="4" marque="sony">
+        <nom>Lecteur MP3 Sony NWZ-A15</nom>
+        <stockage>16 Go+16Go</stockage>
+        <prix>189.93</prix>
+    </balladeur>
+</racine>
