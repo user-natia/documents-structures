@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ENTITY nano "Apple iPod Nano">
+<!ENTITY touch "Apple iPod Touch">
+<!ENTITY  % apple "apple">
+
+<!ELEMENT racine (baladeur+)>
+<!ELEMENT baladeur (nom, stockage, prix)>
+<!ATTLIST baladeur 
+            id CDATA #REQUIRED
+            marque ( %apple; | sony ) #REQUIRED>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT stockage (#PCDATA)>
+<!ELEMENT prix (#PCDATA)>
+
